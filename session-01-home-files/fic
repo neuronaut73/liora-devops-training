@@ -1,0 +1,12 @@
+total 36
+drwxrwxr-x 2 ubuntu ubuntu 4096 Jul  3 19:39 directory2
+-rw-rw-r-- 1 ubuntu ubuntu   40 Jul  3 19:54 errors_file
+-rw-rw-r-- 1 ubuntu ubuntu    0 Jul  3 20:32 fic
+-rw-rw-r-- 1 ubuntu ubuntu   12 Jul  3 19:39 file1
+-rw-rw-r-- 1 ubuntu ubuntu   24 Jul  3 19:39 file2
+-rw-rw-r-- 1 ubuntu ubuntu    7 Jul  3 20:26 firstname
+-rw-rw-r-- 1 ubuntu ubuntu   37 Jul  3 20:32 log
+drwxrwxr-x 2 ubuntu ubuntu 4096 Jul  3 19:39 my_directory
+-rw-rw-r-- 1 ubuntu ubuntu    0 Jul  3 19:39 my_file
+-rw-rw-r-- 1 ubuntu ubuntu   64 Jul  3 20:23 name.py
+-rw-rw-r-- 1 ubuntu ubuntu  156 Jul  3 19:39 root_content
