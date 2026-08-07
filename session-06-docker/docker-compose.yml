@@ -1,0 +1,75 @@
+services:
+
+  api:
+    image: datascientest/fastapi:1.0.0
+    container_name: sentiment-api
+    ports:
+      - "8000:8000"
+    networks:
+      - api-test-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/status')"
+        ]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+  authentication-test:
+    build:
+      context: ./tests
+      dockerfile: Dockerfile
+    image: liora-api-tests:1.0
+    container_name: authentication-test
+    command: ["python", "authentication_test.py"]
+    environment:
+      API_ADDRESS: api
+      API_PORT: "8000"
+      LOG: "1"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - api-test-network
+    depends_on:
+      api:
+        condition: service_healthy
+
+  authorization-test:
+    image: liora-api-tests:1.0
+    container_name: authorization-test
+    command: ["python", "authorization_test.py"]
+    environment:
+      API_ADDRESS: api
+      API_PORT: "8000"
+      LOG: "1"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - api-test-network
+    depends_on:
+      api:
+        condition: service_healthy
+
+  content-test:
+    image: liora-api-tests:1.0
+    container_name: content-test
+    command: ["python", "content_test.py"]
+    environment:
+      API_ADDRESS: api
+      API_PORT: "8000"
+      LOG: "1"
+    volumes:
+      - ./logs:/logs
+    networks:
+      - api-test-network
+    depends_on:
+      api:
+        condition: service_healthy
+
+networks:
+  api-test-network:
+    name: api-test-network

@@ -18,3 +18,5 @@ id_ed25519*
 .copilot/
 .dotnet/
 .local/
+
+*.zip
