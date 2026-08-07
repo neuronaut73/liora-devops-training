@@ -1,0 +1,39 @@
+# Secrets
+wp-config.php
+.env
+*.key
+*.pem
+
+# Database dumps
+*.sql
+*.sql.gz
+
+# Backups
+backups/
+
+# Final submission / deliverables
+deliverables/
+*.zip
+
+# Temporary files
+*.tmp
+*.swp
+
+# Downloaded WordPress distribution
+wordpress/
+latest.tar.gz
+
+# Secrets
+.env
+wp-config.php
+*.key
+*.pem
+
+# Database dumps
+*.sql
+*.sql.gz
+
+# Backups and submission
+backups/
+deliverables/
+*.zip
