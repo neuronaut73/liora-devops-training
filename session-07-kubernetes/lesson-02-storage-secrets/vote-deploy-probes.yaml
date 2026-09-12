@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: schoolofdevops/vote:v1
+          image: schoolofdevops/vote:v12
 
           resources:
             requests:
