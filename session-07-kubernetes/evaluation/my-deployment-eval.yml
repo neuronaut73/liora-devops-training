@@ -25,7 +25,7 @@ spec:
                   key: MYSQL_PASSWORD
 
         - name: api
-          image: neuronaut73/user-api-eval:1.0
+          image: neuronaut73/user-api-eval:1.1
           ports:
             - containerPort: 8000
           env:
